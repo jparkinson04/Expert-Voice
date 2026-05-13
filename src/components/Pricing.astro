@@ -1,0 +1,39 @@
+---
+import { priceTiers, pricingNote } from '../data/pricing';
+---
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="pricing-head">
+      <div class="section-label reveal">Pricing</div>
+      <h2 class="display reveal" data-delay="1">Simple, transparent, no hidden bits.</h2>
+      <p class="reveal" data-delay="2">Pick the layer that fits where you are. Upgrade or add-on when you're ready.</p>
+    </div>
+
+    <div class="pricing-grid">
+      {priceTiers.map((tier, i) => (
+        <div class={`price-card${tier.featured ? ' featured' : ''} reveal`} data-delay={(i + 1).toString()}>
+          {tier.badge && <span class="price-badge">{tier.badge}</span>}
+          <div class="price-label">{tier.label}</div>
+          <h3>{tier.title}</h3>
+          <p class="price-tagline">{tier.tagline}</p>
+          <div class="price-amount">
+            <span class="currency">{tier.currency}</span>
+            <span class="num">{tier.amount}</span>
+            <span class="period">{tier.period}</span>
+          </div>
+          <ul class="price-list">
+            {tier.features.map((f) => (
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+          <a href={tier.cta.href} class="btn-primary"><span>{tier.cta.label}</span></a>
+        </div>
+      ))}
+    </div>
+
+    <p class="pricing-note">{pricingNote}</p>
+  </div>
+</section>

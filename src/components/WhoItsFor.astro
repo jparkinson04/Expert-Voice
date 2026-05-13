@@ -1,0 +1,24 @@
+---
+import { whoCards } from '../data/who-cards';
+---
+<section class="who-section">
+  <div class="container">
+    <div class="section-label reveal">Who it's for</div>
+    <h2 class="display who-headline reveal" data-delay="1">
+      Two kinds of people<br />buy this, and <em>get it.</em>
+    </h2>
+
+    <div class="who-grid">
+      {whoCards.map((card, i) => (
+        <div class="who-card reveal" data-delay={(i + 1).toString()}>
+          <span class="tag">{card.tag}</span>
+          <h3 set:html={card.title} />
+          <p set:html={card.bodyHtml} />
+          <ul class="who-list">
+            {card.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

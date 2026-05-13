@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout
+  title="Founder Visibility Audit | Expert Voice"
+  description="Seven questions, ten minutes. Instant personalised results telling you where your visibility is strong, where it's leaking, and three things to fix this week."
+>
+  <Nav />
+  <main class="audit-page">
+    <div class="container">
+      <div class="audit-page-head reveal">
+        <span class="badge">Free • 10 minutes</span>
+        <h1 class="display">The Founder Visibility Audit.</h1>
+        <p>Seven questions. Instant personalised results. Find out exactly where your visibility is strong, where it's leaking, and three things to fix this week.</p>
+      </div>
+      <iframe
+        id="audit-embed"
+        src="https://expert-voice.co.uk/wp-content/uploads/expert-voice-audit.html"
+        title="Founder Visibility Audit"
+        width="100%"
+        height="950"
+        loading="lazy"
+        scrolling="yes"
+      ></iframe>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

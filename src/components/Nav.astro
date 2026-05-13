@@ -1,0 +1,27 @@
+---
+import { navLinks, navCta } from '../data/nav';
+---
+<nav class="site-nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="#" class="logo" aria-label="Expert Voice, home">
+      <img src="/logo-full.png" alt="Expert Voice" class="logo-mark" width="136" height="72" />
+    </a>
+    <ul class="nav-links">
+      {navLinks.map((link) => (
+        <li><a href={link.href}>{link.label}</a></li>
+      ))}
+      <li><a href={navCta.href} class="nav-cta">{navCta.label}</a></li>
+    </ul>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      Menu
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu">
+  {navLinks.map((link) => (
+    <a href={link.href}>{link.label}</a>
+  ))}
+  <a href={navCta.href} class="cta">{navCta.label}</a>
+</div>

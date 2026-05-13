@@ -1,0 +1,31 @@
+---
+import { caseStudies } from '../data/case-studies';
+---
+<section class="cases-section" id="cases">
+  <div class="container">
+    <div class="cases-head">
+      <div class="reveal">
+        <div class="section-label">Case studies</div>
+        <h2 class="display">Real clients. Real numbers.</h2>
+      </div>
+      <a href="#" class="btn-secondary reveal" data-delay="1">View all case studies →</a>
+    </div>
+    <div class="cases-grid">
+      {caseStudies.map((c, i) => (
+        <a href={c.href} class="case-card reveal" data-delay={((i % 3) + 1).toString()}>
+          <span class="case-category">{c.category}</span>
+          <h3>{c.name}</h3>
+          <p>{c.body}</p>
+          <div class="case-result">
+            {c.stats.map((stat) => (
+              <div class="case-stat">
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

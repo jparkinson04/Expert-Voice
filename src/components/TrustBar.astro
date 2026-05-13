@@ -1,0 +1,19 @@
+---
+import { trustLabel, trustClients } from '../data/trust-bar';
+---
+<section class="trust-bar">
+  <div class="container">
+    <p class="trust-label">{trustLabel}</p>
+  </div>
+  <div class="trust-marquee" role="region" aria-label={trustLabel}>
+    <div class="trust-track">
+      {trustClients.map((c) => (
+        <img src={c.logo} alt={c.name} loading="lazy" />
+      ))}
+      {/* Duplicate copy keeps the loop seamless; hidden from assistive tech. */}
+      {trustClients.map((c) => (
+        <img src={c.logo} alt="" aria-hidden="true" loading="lazy" />
+      ))}
+    </div>
+  </div>
+</section>

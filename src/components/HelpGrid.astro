@@ -1,0 +1,34 @@
+---
+import { helpCards } from '../data/help-cards';
+---
+<section class="help-section" id="help">
+  <div class="container">
+    <div class="section-label reveal">What we help with</div>
+    <h2 class="display help-headline reveal" data-delay="1">
+      We help you<br />build
+      <span class="help-rotate-wrapper">
+        <span class="help-rotate">
+          <span><em>trust.</em></span>
+          <span><em>visibility.</em></span>
+          <span><em>conversations.</em></span>
+          <span><em>recognition.</em></span>
+          <span><em>trust.</em></span>
+        </span>
+      </span>
+    </h2>
+    <p class="help-intro reveal" data-delay="2">
+      Not posts. Not impressions. Not "thought leadership." Those are by-products. The real work is putting your expertise, or your team's, in front of the right people, consistently enough that they remember you when the buying moment comes.
+    </p>
+
+    <div class="help-grid">
+      {helpCards.map((card, i) => (
+        <article class="help-card reveal" data-delay={(i + 1).toString()}>
+          <div class="help-card-num">{card.num}</div>
+          <div class="help-card-icon"><Fragment set:html={card.iconSvg} /></div>
+          <h3>{card.title}</h3>
+          <p>{card.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
