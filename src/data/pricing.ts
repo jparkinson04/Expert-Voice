@@ -11,7 +11,6 @@ export type PriceTier = {
   badge?: string;
 };
 
-// Current numbers; new pricing structure incoming, swap when supplied.
 export const priceTiers: PriceTier[] = [
   {
     label: 'Add-on',
@@ -63,6 +62,3 @@ export const priceTiers: PriceTier[] = [
     cta: { href: '#book', label: 'Add this on' },
   },
 ];
-
-export const pricingNote =
-  'Pricing shown is current. New pricing structure rolling out, final figures to be confirmed.';
