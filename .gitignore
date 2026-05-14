@@ -44,3 +44,7 @@ pnpm-debug.log*
 
 # Project artifacts
 _archive/
+
+# Client source materials kept locally but never deployed
+/*.pdf
+/c8692554-*.jpg
