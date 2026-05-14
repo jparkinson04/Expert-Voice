@@ -6,67 +6,47 @@ export type CaseStudy = {
   stats: { value: string; label: string }[];
 };
 
-// Numbers are real client outcomes, verify with CONTENT.md before editing.
-// Links point to '#' for v1; case-study pages are planned for v1.5.
+// Landing-page cards. Each links to a dedicated /case-studies/<slug> page.
+// Company names only (no personal names). Social results only (no revenue).
 export const caseStudies: CaseStudy[] = [
   {
-    href: '#',
-    category: 'Social value consulting',
-    name: 'Christian Sait',
-    body: 'Turned LinkedIn into a consistent inbound channel through opinion-led personal posts and a targeted ICP outreach engine.',
-    stats: [
-      { value: '+93', label: 'ICP connections' },
-      { value: '36%', label: 'Acceptance rate' },
-    ],
-  },
-  {
-    href: '#',
-    category: 'EdTech / education',
+    href: '/case-studies/air-education',
+    category: 'EdTech · UK Schools',
     name: 'AIR Education',
-    body: "Founder-led authority content paired with SEO blogs that 10x'd Google traffic and produced a 4% blog-to-demo conversion rate.",
+    body: 'Founder-led content and SEO blogging that put AIR in front of the schools researching AI tools.',
     stats: [
-      { value: '10x', label: 'Google traffic' },
-      { value: '741%', label: 'Newsletter growth' },
+      { value: '10×', label: 'Google traffic' },
+      { value: '+741%', label: 'Newsletter readers' },
     ],
   },
   {
-    href: '#',
-    category: 'Hospitality tech',
-    name: 'Autonary AI',
-    body: 'Five months of LinkedIn growth that turned the founder into a recognised voice in hospitality tech, and built a pipeline of inbound conversations.',
+    href: '/case-studies/sonar-engagement',
+    category: 'Social Value Consulting',
+    name: 'Sonar Engagement',
+    body: 'From sporadic posting to a consistent voice in the Social Value sector, with a growing pipeline of decision-maker connections.',
     stats: [
-      { value: '+664', label: 'ICP connections' },
-      { value: '1,594', label: 'Engagements' },
+      { value: '+551', label: 'Followers in 90 days' },
+      { value: '+227%', label: 'Post engagement' },
     ],
   },
   {
-    href: '#',
-    category: 'Charity / youth',
+    href: '/case-studies/yess-foundation',
+    category: 'Youth Charity · Multi-platform',
     name: 'YESS Foundation',
-    body: 'Multi-platform content programme covering LinkedIn personal, company page, TikTok and newsletter, focused on reaching young people through facilitators and schools.',
+    body: 'LinkedIn, TikTok, and email working together to reach schools, facilitators, and the young people YESS exists to serve.',
     stats: [
-      { value: '4', label: 'Active channels' },
-      { value: 'Monthly', label: 'Newsletter' },
+      { value: '17.5%', label: 'LinkedIn engagement' },
+      { value: '62%', label: 'Email open rate' },
     ],
   },
   {
-    href: '#',
-    category: 'EQ consultancy',
-    name: 'Phil, Emotion at Work',
-    body: 'Workplace emotional intelligence consultancy positioned through founder-led content that translates research into the language clients actually use.',
-    stats: [
-      { value: '3x/wk', label: 'Post cadence' },
-      { value: 'B2B', label: 'L&D buyers' },
-    ],
-  },
-  {
-    href: '#',
-    category: 'Creator / TikTok',
+    href: '/case-studies/luminnote',
+    category: 'AI Platform · TikTok-led',
     name: 'LuminNote',
-    body: 'TikTok-first creator growth: 169 followers gained, top videos hitting 50K, 40K and 14.5K views. The only revenue-driving channel for this client.',
+    body: 'Built a TikTok channel from zero, then scaled it to nearly a million views in two months through data-led content iteration.',
     stats: [
-      { value: '50K+', label: 'Top video' },
-      { value: '12.5K', label: 'Total likes' },
+      { value: '819K', label: 'Views in 60 days' },
+      { value: '+1,067%', label: 'Month-on-month growth' },
     ],
   },
 ];

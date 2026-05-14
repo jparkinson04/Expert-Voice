@@ -1510,6 +1510,299 @@ footer.site-footer .footer-tagline {
 .reveal[data-delay="5"] { transition-delay: 0.4s; }
 .reveal[data-delay="6"] { transition-delay: 0.48s; }
 
+/* ============ CASE STUDY PAGES ============
+   Layout for /case-studies/<slug> pages. Friendly, editorial feel: big stats
+   with plain-language context, work explained as cards, results grouped by
+   theme. Uses brand variables throughout. */
+.case-study-page { background: var(--paper); }
+
+.case-hero {
+  background: var(--paper-warm);
+  padding: 56px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.case-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 82% 18%, rgba(82, 127, 230, 0.16), transparent 50%),
+    radial-gradient(circle at 12% 88%, rgba(252, 159, 91, 0.14), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+.case-hero-inner { position: relative; z-index: 1; }
+
+.case-back {
+  display: inline-block;
+  margin-bottom: 32px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+.case-back:hover { color: var(--blue); }
+
+.case-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.case-eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1.5px;
+  background: var(--orange);
+  margin-right: 10px;
+}
+.case-hero h1.display {
+  font-size: clamp(48px, 7vw, 88px);
+  margin-bottom: 20px;
+}
+.case-subtitle {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: clamp(19px, 2vw, 22px);
+  font-style: italic;
+  color: var(--ink-soft);
+  max-width: 760px;
+  margin-bottom: 56px;
+  line-height: 1.5;
+}
+
+.case-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 880px) { .case-hero-stats { grid-template-columns: 1fr; } }
+
+.case-hero-stat {
+  background: white;
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 32px -16px rgba(26, 26, 46, 0.16);
+}
+.case-hero-stat-num {
+  font-family: 'Newsreader', Georgia, serif;
+  font-variation-settings: "opsz" 60;
+  font-size: clamp(40px, 4.2vw, 52px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.case-hero-stat:nth-child(2) .case-hero-stat-num { color: var(--orange); }
+.case-hero-stat:nth-child(3) .case-hero-stat-num { color: var(--blue); }
+.case-hero-stat-label {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.case-hero-stat-context {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.case-section { padding: 88px 0; }
+.case-section-tinted { background: var(--paper-warm); }
+.case-section-callout {
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+  padding: 96px 0;
+}
+
+.case-section-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+@media (max-width: 840px) {
+  .case-section-grid { grid-template-columns: 1fr; gap: 20px; }
+  .case-section { padding: 64px 0; }
+}
+.case-section-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-soft);
+  font-weight: 600;
+  padding-top: 6px;
+}
+.case-section-tinted .case-section-label { color: var(--ink-soft); }
+.case-section-body {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 760px;
+}
+.case-section-body p { margin-bottom: 20px; }
+.case-section-body p:last-child { margin-bottom: 0; }
+
+.case-work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 720px) { .case-work-grid { grid-template-columns: 1fr; } }
+.case-work-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px;
+}
+.case-work-num {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 14px;
+  color: var(--blue);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+}
+.case-work-card:nth-child(even) .case-work-num { color: var(--orange); }
+.case-work-card h3 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.case-work-card p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin-bottom: 0;
+}
+
+.case-result-group {
+  margin-bottom: 56px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid var(--line);
+}
+.case-result-group:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.case-result-group h3 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: clamp(24px, 2.6vw, 30px);
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+.case-result-group > p {
+  margin-bottom: 28px;
+}
+.case-stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+.case-stat-card {
+  background: var(--paper-warm);
+  border-radius: 14px;
+  padding: 22px;
+}
+.case-section-tinted .case-stat-card {
+  background: white;
+  border: 1px solid var(--line);
+}
+.case-stat-num {
+  font-family: 'Newsreader', Georgia, serif;
+  font-variation-settings: "opsz" 60;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.case-stat-row .case-stat-card:nth-child(2) .case-stat-num { color: var(--orange); }
+.case-stat-row .case-stat-card:nth-child(3) .case-stat-num { color: var(--blue); }
+.case-stat-label {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.case-stat-context {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+.case-callout {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.case-callout h3 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-variation-settings: "opsz" 60;
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 600;
+  margin-bottom: 22px;
+  color: white;
+  letter-spacing: -0.015em;
+}
+.case-callout p {
+  font-size: 19px;
+  line-height: 1.6;
+  color: rgba(251, 250, 247, 0.85);
+}
+
+.case-cta-section {
+  padding: 100px 0;
+  text-align: center;
+  background: var(--blue);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.case-cta-section::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(252, 159, 91, 0.3), transparent 70%);
+  pointer-events: none;
+}
+.case-cta-section .container { position: relative; z-index: 1; }
+.case-cta-section h2 {
+  font-size: clamp(36px, 4.5vw, 52px);
+  margin-bottom: 20px;
+}
+.case-cta-section p {
+  font-size: 19px;
+  margin-bottom: 36px;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.case-cta-section .btn-primary {
+  background: var(--paper);
+  color: var(--ink);
+}
+.case-cta-section .btn-primary::before {
+  background: var(--orange);
+}
+.case-cta-section .btn-primary:hover { color: white; }
+
 /* ============ REDUCED MOTION ============
    Respect prefers-reduced-motion: switch off floats, rotation,
    reveal motion, smooth scroll, and bar fills. */
